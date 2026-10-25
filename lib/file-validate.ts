@@ -1,0 +1,1 @@
+const ALLOW=['image/png','image/jpeg','application/pdf','text/csv','application/vnd.hancom.hwp']; const MAX=10*1024*1024; export function validateFile(f:any){ if(!ALLOW.includes(f.mimetype)) throw new Error('허용안됨'); if(f.size>MAX) throw new Error('10MB 초과'); if(f.originalname.includes('..')) throw new Error('잘못된 파일명'); return true; }

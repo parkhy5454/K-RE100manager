@@ -1,0 +1,1 @@
+import { JSDOM } from 'jsdom'; import DOMPurify from 'dompurify'; const w=new JSDOM('').window as any; const p=DOMPurify(w); export const sanitizeHtml=(i:string)=>p.sanitize(i); export const sanitizeText=(i:string)=>i.replace(/</g,'&lt;').replace(/>/g,'&gt;');

@@ -1,0 +1,1 @@
+import { z } from 'zod'; export const siteSchema=z.object({name:z.string().min(1),areaM2:z.number().positive(),capacityKw:z.number().positive(),address:z.string().min(5),corpNum:z.string().regex(/^\d{10}$/).optional()}); export const orgSchema=z.object({name:z.string().min(1),corpNum:z.string().regex(/^\d{10}$/).optional()});

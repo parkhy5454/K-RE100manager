@@ -1,0 +1,1 @@
+export const CSAP_CHECKLIST=['30분 로그아웃','AES-256','XSS','Zod','보안헤더','PII 마스킹','RBAC','Diff','백업테스트','파일검증'];

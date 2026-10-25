@@ -1,0 +1,1 @@
+import { CSAP_CHECKLIST } from '@/lib/csap'; export default function Dashboard(){ return <div style={{padding:20}}><h2>대시보드 v3.1</h2><ul>{CSAP_CHECKLIST.map(c=><li key={c}>{c}</li>)}</ul></div> }

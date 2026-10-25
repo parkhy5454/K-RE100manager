@@ -1,0 +1,1 @@
+import jsPDF from 'jspdf'; export function generateContractPdf(data:any){ const doc=new jsPDF(); doc.text(`RE100 ${data.orgName} ${data.amount}원`,20,30); doc.text('직인: (서명란)',20,120); return doc.output('arraybuffer'); }

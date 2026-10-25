@@ -1,0 +1,1 @@
+export function diffJson(b:any,a:any){ const d:any={}; const ks=new Set([...Object.keys(b||{}),...Object.keys(a||{})]); for(const k of ks){ if(JSON.stringify(b?.[k])!==JSON.stringify(a?.[k])) d[k]={before:b?.[k],after:a?.[k]} } return d; }

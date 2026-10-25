@@ -1,0 +1,1 @@
+export const PLANS={BASIC:{price:6000000},PRO:{price:12000000},ENTERPRISE:{price:50000000}};

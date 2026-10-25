@@ -1,0 +1,1 @@
+export async function sendNotification(orgId:string,type:string,msg:string){ console.log(`[NOTIFY] ${orgId} ${type} ${msg}`); return {sent:true}; } export const checkExpiry=(d:Date)=>{ const diff=d.getTime()-Date.now(); return diff<=7*86400000&&diff>0; };

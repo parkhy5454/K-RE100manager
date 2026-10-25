@@ -1,0 +1,1 @@
+export async function GET(){ return Response.json({status:'ok',version:'3.1-final-clean',features:12}); }
