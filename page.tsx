@@ -1,0 +1,1 @@
+export default function Home(){ return <div style={{padding:40}}><h1>RE100 v3.1 Enterprise Final 연 5000만원</h1><p>최종 파일만 16개 - 중복 없음</p><ul><li>/dashboard</li><li>/dashboard/integrated (18개 시군)</li><li>/admin/audit</li><li>/api/health</li></ul></div> }

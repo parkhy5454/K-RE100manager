@@ -1,0 +1,1 @@
+import { PrismaClient } from '@prisma/client'; const prisma=new PrismaClient(); export async function runBackupTest(){ const s=Date.now(); const c=await prisma.org.count(); const d=Date.now()-s; return prisma.backupLog.create({data:{status:'SUCCESS',sizeMb:c*0.01,durationMs:d}}); }

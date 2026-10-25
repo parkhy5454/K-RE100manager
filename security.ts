@@ -1,0 +1,1 @@
+export const rateLimitMap=new Map(); export function checkRateLimit(ip:string,limit=100,windowMs=60000){ const now=Date.now(); const e=rateLimitMap.get(ip); if(!e||now>e.reset){ rateLimitMap.set(ip,{count:1,reset:now+windowMs}); return true;} if(e.count>=limit) return false; e.count++; return true;}

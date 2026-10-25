@@ -1,0 +1,10 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql" url = env("DATABASE_URL") }
+model User { id String @id @default(cuid()) email String @unique emailHash String @unique phone String? name String role Role @default(VIEWER) orgId String? org Org? @relation(fields: [orgId], references: [id]) lastActiveAt DateTime @default(now()) createdAt DateTime @default(now()) auditLogs AuditLog[] }
+model Org { id String @id @default(cuid()) name String corpNum String? @unique users User[] sites Site[] payments Payment[] createdAt DateTime @default(now()) }
+model Site { id String @id @default(cuid()) name String orgId String org Org @relation(fields: [orgId], references: [id]) areaM2 Float capacityKw Float address String createdAt DateTime @default(now()) audits AuditLog[] }
+model Payment { id String @id @default(cuid()) orgId String org Org @relation(fields: [orgId], references: [id]) amount Int plan Plan tossPaymentKey String? @unique status String @default("PENDING") refunded Boolean @default(false) createdAt DateTime @default(now()) }
+model AuditLog { id String @id @default(cuid()) userId String? user User? @relation(fields: [userId], references: [id]) siteId String? site Site? @relation(fields: [siteId], references: [id]) action String before Json? after Json? diff Json? ip String? createdAt DateTime @default(now()) }
+model BackupLog { id String @id @default(cuid()) status String sizeMb Float durationMs Int resultUrl String? createdAt DateTime @default(now()) }
+enum Role { SUPER_ADMIN ORG_ADMIN ENERGY_MANAGER FINANCE AUDITOR VIEWER }
+enum Plan { BASIC PRO ENTERPRISE }

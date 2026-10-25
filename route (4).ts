@@ -1,0 +1,1 @@
+import { generateContractPdf } from '@/lib/contract-pdf'; export async function POST(req:Request){ const b=await req.json(); const buf=generateContractPdf(b); return new Response(buf,{headers:{'Content-Type':'application/pdf'}}); }

@@ -1,0 +1,1 @@
+export const ROLES=['SUPER_ADMIN','ORG_ADMIN','ENERGY_MANAGER','FINANCE','AUDITOR','VIEWER'] as const; export type Role=typeof ROLES[number]; const h:Record<Role,number>={SUPER_ADMIN:100,ORG_ADMIN:80,ENERGY_MANAGER:60,FINANCE:50,AUDITOR:40,VIEWER:10}; export const can=(r:Role,req:Role)=>h[r]>=h[req];

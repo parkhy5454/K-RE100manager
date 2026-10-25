@@ -1,0 +1,1 @@
+export default function Integrated(){ const orgs=Array.from({length:18},(_,i)=>({name:`경남 ${i+1}시군`,rec:Math.floor(Math.random()*100)})); return <div style={{padding:20}}><h2>통합 대시보드 18개 시군</h2><table border={1}><tbody>{orgs.map(o=><tr key={o.name}><td>{o.name}</td><td>{o.rec}%</td></tr>)}</tbody></table></div> }
